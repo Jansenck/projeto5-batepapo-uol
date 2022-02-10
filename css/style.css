@@ -1,0 +1,188 @@
+body {
+    background-color: #E5E5E5;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* ---- Barra topo ---- */
+.sombra {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    bottom: 0;
+    top:0;
+    z-index: 4;
+}
+
+header {
+    height: 11vh;
+    width: 100vw;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left:0;
+    z-index: 1;
+    box-shadow: 0 0 0.9em gray;
+    background-color: #FFFFFF;
+}
+.logoUOL {
+    height: 8vh;
+    width: 20vw;
+    position: absolute;
+    left: 6vw;
+}
+.vetorAmigos {
+    height: 6vh;
+    width: 12vw;
+    position: absolute;
+    right: 3.6vw;
+}
+
+/* --- Barra de Chats --- */
+.barraChats {
+    height: 100vh;
+    width: 70vw;
+    background-color: #FFFFFF;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    position: fixed;  
+    top: 0;
+    right: 0;
+    z-index: 3;
+}
+.ocultar {
+    display: none;
+}
+.opcoesContatos {
+    position: absolute;
+    top:0;
+    right:0;
+    font-size: 16px;
+    font-weight: 400;
+}
+.vetorBarra {
+    height: 3vh;
+    width: 1,4vw;
+    width:5.42vw;
+    position: relative;
+    left: 0;
+}
+.vetorCheck {
+    height: 3vh;
+
+    width:5.42vw;
+    position: absolute;
+    right: 8vw;
+    /* border: 3px solid #28BB25; */
+    color: #28bb25;
+}
+.a{
+    display: flex;
+    /* justify-content:space-around; */
+    align-items: center;
+    position: relative;
+    left: 4.8vw;
+}
+.escolhaContato {
+    height: 11vh;
+    width: 70vw;
+    font-weight: 700;
+    /* background-color: green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.todos {
+    height:5.4vh;
+    width: 70vw;
+    /* background-color: blue; */
+}
+
+.contato {
+    height:5.4vh;
+    width: 70vw;
+}
+.visibilidade {
+    height: 10vh;
+    width: 70vw;
+    font-weight: 700;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    /* background-color: yellow; */
+} 
+.privacidade {
+    height:5.4vh;
+    width: 70vw;
+    /* background-color: blue; */
+}
+
+/* --- Conversa --- */
+
+.chat {
+    height: 667px;
+    width: 375px;
+    background-color: #FFFFFF;
+    position: absolute;
+    z-index: 0;
+    top: 15vh;
+}
+.hora{
+    margin-left: 2.14vw;
+}
+.usuario{
+    margin-left: 2.14vw;
+}
+.mensagem{
+    margin-left: 2.14vw;
+}
+.entrouSaiu {
+    height: 6vh;
+    width: 100vw;
+    background-color: #DCDCDC;
+}
+.mensagemPrivada {
+    height: 6vh;
+    width: 100vw;
+    background-color: #FFDEDE;
+}
+.infoMensagens {
+    margin-bottom: 0.6vh;
+    display: flex;
+    align-items: center;
+}
+/* --- Barra enviar menssagens --- */
+
+footer {
+    height: 11vh;
+    width: 100vw;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    box-shadow: 0 0 0.9em gray;
+    background-color: #FFFFFF;
+}
+.enviar {
+    height: 4vh;
+    width: 7vw;
+    position: absolute;
+    right: 3.6vw;
+}
+.escrevaAqui {
+    font-style: italic;
+    font-weight:300;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 4.5vw;
+}
