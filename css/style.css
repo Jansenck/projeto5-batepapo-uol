@@ -128,29 +128,29 @@ header {
     height: 667px;
     width: 375px;
     background-color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 400;
     position: absolute;
     z-index: 0;
     top: 15vh;
 }
-.hora{
+.time{
+    margin-left: 2.14vw;
+    color:#AAAAAA;
+}
+.from{
+    margin-left: 2.14vw;
+    font-weight: 700;
+}
+.text{
     margin-left: 2.14vw;
 }
-.usuario{
-    margin-left: 2.14vw;
-}
-.mensagem{
-    margin-left: 2.14vw;
-}
-.entrouSaiu {
+.status {
     height: 6vh;
     width: 100vw;
     background-color: #DCDCDC;
 }
-.mensagemPrivada {
-    height: 6vh;
-    width: 100vw;
-    background-color: #FFDEDE;
-}
+
 .infoMensagens {
     margin-bottom: 0.6vh;
     display: flex;
@@ -177,12 +177,21 @@ footer {
     position: absolute;
     right: 3.6vw;
 }
+input {
+    height: 11vh;
+    width: 100vw;
+    /* display: flex; */
+    /* align-items: center; */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+}
 .escrevaAqui {
     font-style: italic;
     font-weight:300;
     font-size: 18px;
     display: flex;
     align-items: center;
-    position: absolute;
     left: 4.5vw;
 }

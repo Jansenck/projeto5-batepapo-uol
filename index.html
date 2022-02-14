@@ -16,31 +16,7 @@
             <ion-icon class="vetorAmigos" name="people"></ion-icon>
         </header>
         <main class="chat">
-            <div class="infoMensagens entrouSaiu">
-                <p class="hora">(09:38:22)</p>
-                <p class="usuario">João</p>
-                <p class="mensagem">Minha mensagem é essa</p>
-            </div>
-            <div class="infoMensagens entrouSaiu">
-                <p class="hora">(09:38:22)</p>
-                <p class="usuario">João</p>
-                <p class="mensagem">Minha mensagem é essa</p>
-            </div>
-            <div class="infoMensagens mensagemPrivada">
-                <p class="hora">(09:38:22)</p>
-                <p class="usuario">João</p>
-                <p class="mensagem">Minha mensagem é essa</p>
-            </div>
-            <div class="infoMensagens mensagemPrivada">
-                <p class="hora">(09:38:22)</p>
-                <p class="usuario">João</p>
-                <p class="mensagem">Minha mensagem é essa</p>
-            </div>
-            <div class="infoMensagens entrouSaiu">
-                <p class="hora">(09:38:22)</p>
-                <p class="usuario">João</p>
-                <p class="mensagem">Minha mensagem é essa</p>
-            </div>
+            
         </main>
 
         <section class="sombra ocultar">
@@ -84,12 +60,14 @@
             </aside>
         </section>
         <footer>
-            <p class="escrevaAqui" >Escreva aqui...</p>
+            <div class="escrevaAqui" >
+                <input onclick="digitarMensagem(this)">Escreva aqui...</input>
+            </div>
             <ion-icon class="enviar" name="paper-plane-outline"></ion-icon>
         </footer>
 
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="script.js"></script>
-        <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
     </body>
 </html>
