@@ -18,13 +18,10 @@ function erroParticipante(erroParticipante){
     seuNome = prompt('Insira o seu nome: ');
 }
 
-
-
 function manterConexao(mozilla) {
     console.log('manter conexão enviado com sucesso');
     
 }
-
 
 function erroConexao(erroConectar){
     location.reload();
@@ -45,54 +42,52 @@ function erroSolicitarMensagens(){
     console.log('Erro na solicitação das msg');
 }
 
-function solicitarMensagens(adicionaMensagens) {
+function solicitarMensagens(adicionaMensagens){
 
-    
     let arrayMensagens = adicionaMensagens.data;
-
-    console.log(arrayMensagens);
-
     
     for(let i = 0; i<arrayMensagens.length; i++){
+        let mensagem = arrayMensagens[i];
         
-        let mensagensNoChat = document.querySelector('.chat');
-    
-        if(type[i] == 'status') {
-    
+        if(mensagem.type == 'status') {
+
+            let mensagensNoChat = document.querySelector('.chat');
+
             mensagensNoChat.innerHTML += `
             <ul class="infoMensagens status">
-            <p class="time">${time[i]}</p>
-            <span class="from">${from[i]} ' para ' ${to[i]}</span>
-            <p class="text">${text[i]}</p>
-            </ul>
-            `;
-    
-        } else if (type[i] == 'message') {
-    
+            <p class="time">${mensagem.time}</p>
+            <span class="from">${mensagem.from} para ${mensagem.to}</span>
+            <p class="text">${mensagem.text}</p>
+            </ul>`
+            ;
+
+        } else if (mensagem.type == 'message') {
+
             let mensagensNoChat = document.querySelector('.chat');
-            
+
             mensagensNoChat.innerHTML += `
             <ul class="infoMensagens message">
-            <p class="time">${time[i]}</p>
-            <span class="from">${from[i]} ' para ' ${to[i]}</span>
-            <p class="text">${text[i]}</p>
-            </ul>
-            `;
-    
-        } else if (type[i] == 'private_message') {
-    
-        let mensagensNoChat = document.querySelector('.chat');
-        
+            <p class="time">${mensagem.time}</p>
+            <span class="from">${mensagem.from} para ${mensagem.to}</span>
+            <p class="text">${mensagem.text}</p>
+            </ul>`
+            ;
+
+        } else if (mensagem.type == 'private_message') {
+
+            let mensagensNoChat = document.querySelector('.chat');
+
             mensagensNoChat.innerHTML += `
             <ul class="infoMensagens private_message">
-            <p class="time">${time[i]}</p>
-            <span class="from">${from[i]} ' reservadamente para ' ${to[i]}</span>
-            <p class="text">${text[i]}</p>
-            </ul>
-            `; 
+            <p class="time">${mensagem.time}</p>
+            <span class="from">${mensagem.from} reservadamente para ${mensagem.to}</span>
+            <p class="text">${mensagem.text}</p>
+            </ul>`
+            ; 
         }
     }
 }
+solicitarMensagens;
 
 function tratarErro(erro) {
     console.log(erro.data);
