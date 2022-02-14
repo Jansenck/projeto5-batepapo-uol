@@ -41,27 +41,55 @@ const pegarParticipantes = axios.get('https://mock-api.driven.com.br/api/v4/uol/
 
 const pegarMensagens = axios.get('https://mock-api.driven.com.br/api/v4/uol/messages').then(solicitarMensagens).catch(erroSolicitarMensagens);
 
-function solicitarMensagens(adicionaMensagens){
-    console.log('Mensagens Solicitadas com sucesso');
-
-    if(solicitarMensagens){
-
-        for(let i = 0; i<adicionaMensagens.length; i++){
-
-            let mensagensNoChat = document.querySelector('.chat')
-            
-                chat.innerHTML += `
-                <ul class="infoMensagens status">
-                <p class="time">(09:38:22)</p>
-                <span class="from">` `</span>
-                <p class="text">entrou</p>
-                </ul>
-                `;
-        }
-    }
-}
 function erroSolicitarMensagens(){
     console.log('Erro na solicitação das msg');
+}
+
+function solicitarMensagens(adicionaMensagens) {
+
+    console.log('Mensagens Solicitadas com sucesso');
+    
+    let arrayMensagens = adicionaMensagens.data;
+    
+    for(let i = 0; i<arrayMensagens.length; i++){
+        
+        let mensagensNoChat = document.querySelector('.chat');
+    
+        if(arrayMensagens == 'status') {
+    
+            chat.innerHTML += `
+            <ul class="infoMensagens status">
+            <p class="time">${time[i]}</p>
+            <span class="from">${from[i]} ' para ' ${to[i]}</span>
+            <p class="text">${text[i]}</p>
+            </ul>
+            `;
+    
+        } else if (arrayMensagens == 'message') {
+    
+            let mensagensNoChat = document.querySelector('.chat');
+            
+            chat.innerHTML += `
+            <ul class="infoMensagens message">
+            <p class="time">${time[i]}</p>
+            <span class="from">${from[i]} ' para ' ${to[i]}</span>
+            <p class="text">${text[i]}</p>
+            </ul>
+            `;
+    
+        } else if (arrayMensagens == 'private_message') {
+    
+        let mensagensNoChat = document.querySelector('.chat');
+        
+            chat.innerHTML += `
+            <ul class="infoMensagens private_message">
+            <p class="time">${time[i]}</p>
+            <span class="from">${from[i]} ' reservadamente para ' ${to[i]}</span>
+            <p class="text">${text[i]}</p>
+            </ul>
+            `; 
+        }
+    }
 }
 
 function tratarErro(erro) {
@@ -90,30 +118,30 @@ function loopErro(erroLoop) {
     }
 }
 
-function loopConexao(sucessoLoop) {
-    console.log('Sucesso manter conexão LOOP');
+// function loopConexao(sucessoLoop) {
+//     console.log('Sucesso manter conexão LOOP');
 
-    const enviarConexao = axios.post('https://mock-api.driven.com.br/api/v4/uol/status', entrou);
+//     const enviarConexao = axios.post('https://mock-api.driven.com.br/api/v4/uol/status', entrou);
 
-    const chat = document.querySelector('.chat')
+//     const chat = document.querySelector('.chat')
     
-    if(loopConexao){
+//     if(loopConexao){
 
-        for(let i = 0; i<sucessoLoop.length; i++){
+//         for(let i = 0; i<sucessoLoop.length; i++){
             
-                entrou.innerHTML += `
-                <ul class="infoMensagens status">
-                <p class="time">(09:38:22)</p>
-                <span class="from">` `</span>
-                <p class="text">entrou</p>
-                </ul>
-                `;
-        }
-    }
+//                 entrou.innerHTML += `
+//                 <ul class="infoMensagens status">
+//                 <p class="time">(09:38:22)</p>
+//                 <span class="from">` `</span>
+//                 <p class="text">entrou</p>
+//                 </ul>
+//                 `;
+//         }
+//     }
+// }
+// }
 
-}
-
-loopConexao;
+// loopConexao
 // setInterval(loopConexao, 5000);
 
 // enviarConexao.then(loopConexao);
@@ -154,8 +182,7 @@ pegarMensagens.then(buscarMensagens);
 pegarMensagens.catch(erroMensagens);
 
 
-function digitarMensagem(){
-    const novaMensagem = document.querySelector('.escrevaAqui');
-    escrevaAqui.innerHTML = '';
-    novaMensagem.innerHTML = Input();
-}
+// function digitarMensagem(){
+//     const novaMensagem = document.querySelector('.escrevaAqui');
+//     escrevaAqui.innerHTML = '';
+//     novaMensagem.innerHTML = Input();

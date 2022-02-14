@@ -150,6 +150,16 @@ header {
     width: 100vw;
     background-color: #DCDCDC;
 }
+.message {
+    height: 6vh;
+    width: 100vw;
+    background-color: #FFFFFF;
+}
+.private_message {
+    height: 6vh;
+    width: 100vw;
+    background-color: #FFDEDE;
+}
 
 .infoMensagens {
     margin-bottom: 0.6vh;
