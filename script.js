@@ -47,17 +47,19 @@ function erroSolicitarMensagens(){
 
 function solicitarMensagens(adicionaMensagens) {
 
-    console.log('Mensagens Solicitadas com sucesso');
     
     let arrayMensagens = adicionaMensagens.data;
+
+    console.log(arrayMensagens);
+
     
     for(let i = 0; i<arrayMensagens.length; i++){
         
         let mensagensNoChat = document.querySelector('.chat');
     
-        if(arrayMensagens == 'status') {
+        if(type[i] == 'status') {
     
-            chat.innerHTML += `
+            mensagensNoChat.innerHTML += `
             <ul class="infoMensagens status">
             <p class="time">${time[i]}</p>
             <span class="from">${from[i]} ' para ' ${to[i]}</span>
@@ -65,11 +67,11 @@ function solicitarMensagens(adicionaMensagens) {
             </ul>
             `;
     
-        } else if (arrayMensagens == 'message') {
+        } else if (type[i] == 'message') {
     
             let mensagensNoChat = document.querySelector('.chat');
             
-            chat.innerHTML += `
+            mensagensNoChat.innerHTML += `
             <ul class="infoMensagens message">
             <p class="time">${time[i]}</p>
             <span class="from">${from[i]} ' para ' ${to[i]}</span>
@@ -77,11 +79,11 @@ function solicitarMensagens(adicionaMensagens) {
             </ul>
             `;
     
-        } else if (arrayMensagens == 'private_message') {
+        } else if (type[i] == 'private_message') {
     
         let mensagensNoChat = document.querySelector('.chat');
         
-            chat.innerHTML += `
+            mensagensNoChat.innerHTML += `
             <ul class="infoMensagens private_message">
             <p class="time">${time[i]}</p>
             <span class="from">${from[i]} ' reservadamente para ' ${to[i]}</span>
